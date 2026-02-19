@@ -13,6 +13,10 @@ export default function ResumeSkeleton() {
             <div className="column is-12-tablet is-8-desktop">
               <div className="skeleton skeleton-title mb-3" />
               <div className="skeleton skeleton-card mb-3" />
+              <div className="skeleton skeleton-card mb-5" />
+              
+              <div className="skeleton skeleton-title mb-3" />
+              <div className="skeleton skeleton-card mb-3" />
               <div className="skeleton skeleton-card" />
             </div>
             <div className="column is-12-tablet is-4-desktop">

@@ -68,6 +68,36 @@ function SkillsList({ skills = [] }) {
   )
 }
 
+function CertificationsList({ certifications = [] }) {
+  return (
+    <div className="mt-5">
+      <h2 className="title is-4">Certificaciones</h2>
+      {certifications.map((certification, index) => (
+        <article className="card mb-3" key={`${certification.name}-${index}`}>
+          <div className="card-content">
+            <div className="media">
+              <div className="media-content">
+                <p className="title is-6 mb-2">{certification.name}</p>
+                <p className="subtitle is-7 has-text-grey mb-3">{certification.provider}</p>
+                {certification.credentialUrl && (
+                  <a 
+                    className="button is-small is-link is-light" 
+                    href={certification.credentialUrl} 
+                    target="_blank" 
+                    rel="noreferrer"
+                  >
+                    Ver credencial
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  )
+}
+
 export default function PortfolioPage() {
   const { data, isLoading, error, retry } = useResume()
 
@@ -112,6 +142,7 @@ export default function PortfolioPage() {
           <div className="columns is-desktop">
             <div className="column is-12-mobile is-12-tablet is-8-desktop">
               <ExperienceList experiences={data.experiences} />
+              <CertificationsList certifications={data.certifications} />
             </div>
             <div className="column is-12-mobile is-12-tablet is-4-desktop">
               <SkillsList skills={data.skills} />

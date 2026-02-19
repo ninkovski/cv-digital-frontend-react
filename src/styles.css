@@ -92,6 +92,14 @@ body {
   padding: 0.5rem 0.75rem;
 }
 
+.card {
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+}
+
 @media screen and (max-width: 768px) {
   .portfolio-shell {
     border-radius: 10px;
