@@ -36,7 +36,7 @@ jobs:
         run: npm run build
         env:
           VITE_RESUME_API_URL: ${{ vars.VITE_RESUME_API_URL }}
-          VITE_RESUME_API_KEY: ${{ secrets.VITE_RESUME_API_KEY }}
+          VITE_RESUME_API_KEY: "my-secret-key"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
