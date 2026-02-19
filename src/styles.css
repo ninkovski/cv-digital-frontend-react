@@ -53,9 +53,29 @@ body {
   }
 }
 
+.columns {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.column {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 @media screen and (max-width: 768px) {
   .portfolio-shell {
     border-radius: 10px;
     padding: 1rem;
+  }
+  
+  .columns {
+    display: block;
+  }
+  
+  .column {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

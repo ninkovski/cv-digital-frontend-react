@@ -106,11 +106,11 @@ export default function PortfolioPage() {
         <div className="box portfolio-shell">
           <ProfileHeader profile={data} />
 
-          <div className="columns is-variable is-6 is-multiline">
-            <div className="column is-12-tablet is-8-desktop">
+          <div className="columns is-desktop">
+            <div className="column is-12-mobile is-12-tablet is-8-desktop">
               <ExperienceList experiences={data.experiences} />
             </div>
-            <div className="column is-12-tablet is-4-desktop">
+            <div className="column is-12-mobile is-12-tablet is-4-desktop">
               <SkillsList skills={data.skills} />
             </div>
           </div>
