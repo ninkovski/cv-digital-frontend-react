@@ -3,9 +3,9 @@ import { useResume } from '../hooks/useResume'
 
 function ProfileHeader({ profile }) {
   return (
-    <div className="mb-5 profile-header">
-      <h1 className="title is-3-mobile is-2-tablet mb-2">{profile.fullName}</h1>
-      <p className="subtitle is-6-mobile is-5-tablet has-text-primary mb-3">{profile.role}</p>
+    <div className="mb-5 ">
+      <h1 className="title profile-header is-3-mobile is-2-tablet mb-2">{profile.fullName}</h1>
+      <p className="subtitle profile-header is-6-mobile is-5-tablet has-text-primary mb-3">{profile.role}</p>
       <p className="content mb-4">{profile.summary}</p>
 
       <div className="buttons are-small">
@@ -74,14 +74,14 @@ function CertificationsList({ certifications = [] }) {
           <article className="card certification-card" key={`${certification.name}-${index}`}>
             <div className="card-content">
               <div className="certification-head">
-                <span className="certification-logo">{(certification.provider || certification.name || '?').charAt(0)}</span>
-                <p className="certification-name">{certification.name}</p>
+                {certification.credentialUrl ? (
+                  <a className="certification-link certification-name" href={certification.credentialUrl} target="_blank" rel="noreferrer">
+                    {certification.name}
+                  </a>
+                ) : (
+                  <p className="certification-name">{certification.name}</p>
+                )}
               </div>
-              {certification.credentialUrl && (
-                <a className="certification-link" href={certification.credentialUrl} target="_blank" rel="noreferrer">
-                  Ver credencial
-                </a>
-              )}
             </div>
           </article>
         ))}
