@@ -63,6 +63,22 @@ body {
   word-wrap: break-word;
 }
 
+.skill-tag-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.skill-name {
+  font-weight: 600;
+}
+
+.skill-details {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
 @media screen and (max-width: 768px) {
   .portfolio-shell {
     border-radius: 10px;

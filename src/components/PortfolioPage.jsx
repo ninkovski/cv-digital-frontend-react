@@ -57,7 +57,10 @@ function SkillsList({ skills = [] }) {
       <div className="tags">
         {skills.map((skill, index) => (
           <span className="tag is-info is-light is-medium mb-2" key={`${skill.name}-${index}`}>
-            {skill.name} · {skill.level} · {skill.years} años
+            <span className="skill-tag-content">
+              <span className="skill-name">{skill.name}</span>
+              <span className="skill-details">{skill.level} · {skill.years} años</span>
+            </span>
           </span>
         ))}
       </div>
