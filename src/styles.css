@@ -12,6 +12,20 @@ body {
   border-radius: 14px;
 }
 
+.portfolio-main-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-header .buttons {
+  justify-content: center;
+}
+
 .skeleton {
   border-radius: 8px;
   background: linear-gradient(90deg, #ececec 25%, #f6f6f6 37%, #ececec 63%);
@@ -53,43 +67,72 @@ body {
   }
 }
 
-.columns {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.column {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-.skill-tag-content {
+.certifications-row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.skill-name {
-  font-weight: 600;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
+.certification-card {
+  flex: 1 1 250px;
+  margin-bottom: 0;
 }
 
-.skill-details {
+.certification-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+}
+
+.certification-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.75rem;
-  opacity: 0.85;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  font-weight: 700;
+  background: #eef3ff;
+  color: #2f5fd0;
+  flex-shrink: 0;
 }
 
-.tags .tag {
+.certification-name {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.certification-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
   max-width: 100%;
-  white-space: normal;
-  height: auto;
-  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  background: #f3f7ff;
+  border: 1px solid #d9e4ff;
+  color: #294686;
+  font-size: 0.83rem;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.experience-card {
+  width: 100%;
 }
 
 .card {
@@ -105,14 +148,12 @@ body {
     border-radius: 10px;
     padding: 1rem;
   }
-  
-  .columns {
-    display: block;
+
+  .portfolio-main-flow {
+    gap: 1.15rem;
   }
-  
-  .column {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+
+  .certification-card {
+    flex: 1 1 100%;
   }
 }

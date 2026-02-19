@@ -3,7 +3,7 @@ import { useResume } from '../hooks/useResume'
 
 function ProfileHeader({ profile }) {
   return (
-    <div className="mb-5">
+    <div className="mb-5 profile-header">
       <h1 className="title is-3-mobile is-2-tablet mb-2">{profile.fullName}</h1>
       <p className="subtitle is-6-mobile is-5-tablet has-text-primary mb-3">{profile.role}</p>
       <p className="content mb-4">{profile.summary}</p>
@@ -26,10 +26,10 @@ function ProfileHeader({ profile }) {
 
 function ExperienceList({ experiences = [] }) {
   return (
-    <div>
+    <div className="experience-section">
       <h2 className="title is-4">Experiencia</h2>
       {experiences.map((experience, index) => (
-        <article className="card mb-4" key={`${experience.company}-${index}`}>
+        <article className="card mb-4 experience-card" key={`${experience.company}-${index}`}>
           <div className="card-content">
             <p className="title is-6 mb-1">{experience.position}</p>
             <p className="subtitle is-7 mb-3">{experience.company}</p>
@@ -52,15 +52,12 @@ function ExperienceList({ experiences = [] }) {
 
 function SkillsList({ skills = [] }) {
   return (
-    <aside>
+    <aside className="skills-section">
       <h2 className="title is-4">Skills</h2>
-      <div className="tags">
+      <div className="skills-wrap">
         {skills.map((skill, index) => (
-          <span className="tag is-info is-light is-medium mb-2" key={`${skill.name}-${index}`}>
-            <span className="skill-tag-content">
-              <span className="skill-name">{skill.name}</span>
-              <span className="skill-details">{skill.level} · {skill.years} años</span>
-            </span>
+          <span className="skill-badge" key={`${skill.name}-${index}`}>
+            {skill.name} · {skill.level} · {skill.years} años
           </span>
         ))}
       </div>
@@ -70,30 +67,25 @@ function SkillsList({ skills = [] }) {
 
 function CertificationsList({ certifications = [] }) {
   return (
-    <div className="mt-5">
+    <div className="certifications-section">
       <h2 className="title is-4">Certificaciones</h2>
-      {certifications.map((certification, index) => (
-        <article className="card mb-3" key={`${certification.name}-${index}`}>
-          <div className="card-content">
-            <div className="media">
-              <div className="media-content">
-                <p className="title is-6 mb-2">{certification.name}</p>
-                <p className="subtitle is-7 has-text-grey mb-3">{certification.provider}</p>
-                {certification.credentialUrl && (
-                  <a 
-                    className="button is-small is-link is-light" 
-                    href={certification.credentialUrl} 
-                    target="_blank" 
-                    rel="noreferrer"
-                  >
-                    Ver credencial
-                  </a>
-                )}
+      <div className="certifications-row">
+        {certifications.map((certification, index) => (
+          <article className="card certification-card" key={`${certification.name}-${index}`}>
+            <div className="card-content">
+              <div className="certification-head">
+                <span className="certification-logo">{(certification.provider || certification.name || '?').charAt(0)}</span>
+                <p className="certification-name">{certification.name}</p>
               </div>
+              {certification.credentialUrl && (
+                <a className="certification-link" href={certification.credentialUrl} target="_blank" rel="noreferrer">
+                  Ver credencial
+                </a>
+              )}
             </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        ))}
+      </div>
     </div>
   )
 }
@@ -137,16 +129,11 @@ export default function PortfolioPage() {
     <section className="section">
       <div className="container is-max-desktop">
         <div className="box portfolio-shell">
-          <ProfileHeader profile={data} />
-
-          <div className="columns is-desktop">
-            <div className="column is-12-mobile is-12-tablet is-8-desktop">
-              <ExperienceList experiences={data.experiences} />
-              <CertificationsList certifications={data.certifications} />
-            </div>
-            <div className="column is-12-mobile is-12-tablet is-4-desktop">
-              <SkillsList skills={data.skills} />
-            </div>
+          <div className="portfolio-main-flow">
+            <ProfileHeader profile={data} />
+            <CertificationsList certifications={data.certifications} />
+            <SkillsList skills={data.skills} />
+            <ExperienceList experiences={data.experiences} />
           </div>
         </div>
       </div>
