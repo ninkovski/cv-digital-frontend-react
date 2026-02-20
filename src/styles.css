@@ -182,7 +182,4 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .certification-card .card-content {
-    padding: 1.25rem;
-  }
 }
