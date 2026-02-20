@@ -89,7 +89,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1.5rem;
 }
 
 .certification-head {
@@ -97,7 +96,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  margin-bottom: 0;
+  margin: 0;
   width: 100%;
 }
 
