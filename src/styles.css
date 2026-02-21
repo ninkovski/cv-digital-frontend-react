@@ -79,6 +79,12 @@ body {
   flex-direction: column;
   border-radius: 8px;
   height: 60px;
+  box-shadow: none;
+}
+
+.certification-card:hover {
+  box-shadow: none;
+  transform: none;
 }
 
 .certification-card .card-content {
