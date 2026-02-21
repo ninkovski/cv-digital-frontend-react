@@ -8,7 +8,10 @@ export default function App() {
           <div className="container is-max-desktop">
             <p className="title is-5-mobile is-4-tablet">Portafolio Profesional</p>
             <p className="subtitle is-7-mobile is-6-tablet mb-0">
-              Ingeniería de Software · Clase Modelo UTEC
+              Ingeniería de Software
+            </p>
+            <p className="subtitle is-7-mobile is-6-tablet mt-2 mb-0">
+              Tecnologías: React · Vite · Bulma · API REST (Spring Boot)
             </p>
           </div>
         </div>
